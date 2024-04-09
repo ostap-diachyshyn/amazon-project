@@ -1,4 +1,5 @@
 //Save data in JS (data structure)
+/*
 const products = [{
   image: 'images/products/athletic-cotton-socks-6-pairs.jpg',
   name: 'Black and Gray Athletic Cotton Socks - 6 Pairs',
@@ -23,35 +24,43 @@ const products = [{
     count: 56
   },
   priceCents: 799
-}
-];
+}, {
+  image: 'images/products/adults-plain-cotton-tshirt-2-pack-teal.jpg',
+  name: 'Adults Plain Cotton T-Shirt - 2 Pack',
+  rating: {
+    stars: 4.5,
+    count: 56
+  },
+  priceCents: 799
+}];
+*/
 
 
 //use data in order to generate HTML
 let productsHTML = '';
 
 products.forEach((product) => {
-  productsHTML = productsHTML + `
+  productsHTML += `
     <div class="product-container">
       <div class="product-image-container">
         <img class="product-image"
-          src="images/products/athletic-cotton-socks-6-pairs.jpg">
+          src="${product.image}">
       </div>
 
       <div class="product-name limit-text-to-2-lines">
-        ${products.name}
+        ${product.name}
       </div>
 
       <div class="product-rating-container">
         <img class="product-rating-stars"
-          src="images/ratings/rating-45.png">
+          src="images/ratings/rating-${product.rating.stars * 10}.png">
         <div class="product-rating-count link-primary">
-          87
+          ${product.rating.count}
         </div>
       </div>
 
       <div class="product-price">
-        ${products.priceCents}
+        ${product.priceCents}
       </div>
 
       <div class="product-quantity-container">
