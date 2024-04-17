@@ -86,7 +86,7 @@ products.forEach((product) => {
       </div>
 
       <button class="add-to-cart-button button-primary js-add-to-cart"
-      data-product-name="${product.name}">
+      data-product-id="${product.id}">
         Add to Cart
       </button>
     </div>
@@ -106,11 +106,11 @@ document.querySelectorAll('.js-add-to-cart')
       //console.log(button.dataset);
       //console.log('gdfgdfgdfgdgfgdfg');
 
-      const productName = button.dataset.productName;
+      const productId = button.dataset.productId;
       //check if product is already in cart
       let matchingItem;
       cart.forEach((item) => {
-        if (productName === item.productName) {
+        if (productId === item.productId) {
           matchingItem = item;
         }
       });
@@ -121,7 +121,7 @@ document.querySelectorAll('.js-add-to-cart')
       } else {
         //if it is NOT, add it to the cart
         cart.push({
-          productName: productName,
+          productId: productId,
           quantity: 1
         });
       }
