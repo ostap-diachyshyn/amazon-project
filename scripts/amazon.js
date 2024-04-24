@@ -141,5 +141,6 @@ document.querySelectorAll('.js-add-to-cart')
       
       console.log(cartQuantity);
       console.log(cart);
+      console.log('test');
     });
   });
